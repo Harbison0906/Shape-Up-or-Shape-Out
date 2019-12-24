@@ -1,0 +1,17 @@
+body {
+  background-color: #FFD600;
+}
+
+h1 {
+  font-family: 'Shrikhand', cursive;
+  color: #8CA3A0;
+  text-shadow: 1px 2px 2px #FFFFFF;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin: 20px;
+}
+
+.btn {
+  background-color: #C9E9F0;
+  color: #000000;
+}
