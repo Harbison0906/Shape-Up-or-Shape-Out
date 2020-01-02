@@ -13,11 +13,11 @@
 </head>
 
 <body>
-  <main>
+  <main class="container-fluid">
 
     <h1>SHAPE UP OR SHAPE OUT</h1>
 
-    <section class="container">
+    <section>
       <article class="input-group mb-3">
         <div class="input-group-prepend">
           <button class="btn btn-outline-secondary" type="button">Add Rectangle</button>
@@ -36,19 +36,57 @@
         <div class="input-group-prepend">
           <button class="btn btn-outline-secondary" type="button">Add Circle</button>
         </div>
-        <input type="text" class="form-control" placeholder="radius px" aria-label=""
-          aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="radius px" aria-label="" aria-describedby="basic-addon1">
       </article>
       <article class="input-group mb-3">
-          <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button">Add Triangle</button>
-          </div>
-          <input type="text" class="form-control" placeholder="height px" aria-label="" aria-describedby="basic-addon1">
-        </article>
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary" type="button">Add Triangle</button>
+        </div>
+        <input type="text" class="form-control" placeholder="height px" aria-label="" aria-describedby="basic-addon1">
+      </article>
     </section>
 
-    <section class="container">
-      
+    <section class="row" id="output">
+      <article class="col" id="shapeBoard"> </article>
+
+      <article class="col mt-3" id="shapeInfo">
+        <div class="input-group input-group-sm mb-3 mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Shape</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3 mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Height</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3 mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Width</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3 mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Area</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3 mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Perimeter</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3 mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Radius</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+      </article>
     </section>
   </main>
 

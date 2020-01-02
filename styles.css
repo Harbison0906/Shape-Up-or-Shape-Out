@@ -2,16 +2,40 @@ body {
   background-color: #FFD600;
 }
 
+main {
+  text-align: center;
+
+}
+
 h1 {
+  display: inline-block;
   font-family: 'Shrikhand', cursive;
   color: #8CA3A0;
   text-shadow: 1px 2px 2px #FFFFFF;
   letter-spacing: 1.5px;
-  text-align: center;
   margin: 20px;
+  border-top: solid #8CA3A0;
+  border-bottom: solid #8CA3A0;
+  padding: 15px;
 }
 
 .btn {
   background-color: #C9E9F0;
   color: #000000;
+  font-family: 'Roboto', sans-serif;
 }
+
+#shapeBoard {
+  margin: 15px;
+  min-width: 600px;
+  min-height: 600px;
+  background-color: #C9E9F0;
+}
+
+#shapeInfo {
+  background-color: #C9E9F0;
+  margin-right: 15px;
+  max-height: 300px;
+  width: 100px;
+}
+  
