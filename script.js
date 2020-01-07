@@ -1,5 +1,8 @@
 class Shape {
-
+  constructor(width, height) {
+    this.div = $('<div></div>');
+    this.div.addClass('shape');
+  }
 }
 
 class Circle extends Shape {
