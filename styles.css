@@ -33,6 +33,19 @@ h1 {
   background-color: #C9E9F0;
 }
 
+.shape {
+  position: absolute;
+  background-color: #000000;
+}
+
+#rectangle {
+  background-color: green;
+}
+
+#square {
+  background-color: red;
+
+}
 #shapeInfo {
   background-color: #C9E9F0;
   margin-right: 15px;
