@@ -23,18 +23,21 @@ class Shape {
   }
   describe() {
     $('#describe-height').val(this.height);
+    $('#describe-width').val(this.width);
   }
 }
 
 class Circle extends Shape {
   constructor(radius) {
-
+    super();
+    this.div.attr('id', 'circle');
   }
 }
 
 class Triangle extends Shape {
   constructor(height) {
-
+    super();
+    this.div.attr('id', 'triangle');
   }
 }
 
@@ -44,7 +47,9 @@ class Rectangle extends Shape {
     this.div.attr('id', 'rectangle');
   }
 }
-new Rectangle(300, 150);
+$('#rectangle-btn').click(function() {
+  
+});
 
 class Square extends Shape {
   constructor(sideLength) {
