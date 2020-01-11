@@ -45,16 +45,24 @@ class Rectangle extends Shape {
   constructor(width, height) {
     super(width, height)
     this.div.attr('id', 'rectangle');
+    this.div.css('backgroundColor', 'green');
   }
 }
 $('#rectangle-btn').click(function() {
-  
+  let rectWidth = $('#width-px').val();
+  let rectHeight = $('#rect-height-px').val();
+  new Rectangle(rectWidth, rectHeight);
+
 });
 
 class Square extends Shape {
   constructor(sideLength) {
     super(sideLength, sideLength);
     this.div.attr('id', 'square');
+    this.div.css('backgrounColor', 'red');
   }
 }
-new Square(150);
+$('#square-btn').click(function() {
+  let sidePx = $('#side-px').val();
+  new Square(sidePx, sidePx);
+})
