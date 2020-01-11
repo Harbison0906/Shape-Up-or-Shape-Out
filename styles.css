@@ -36,7 +36,12 @@ h1 {
 
 .shape {
   position: absolute;
-  background-color: #000000;
+  opacity: 80%;
+}
+
+#circle {
+  background-color: purple;
+  border-radius: 50px;
 }
 
 #rectangle {

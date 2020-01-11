@@ -1,5 +1,6 @@
 
-
+// Overall class for every shape. These properties will
+// will apply to every shape
 class Shape {
   constructor(width, height) {
     this.width = width;
@@ -36,12 +37,27 @@ class Shape {
   }
 }
 
+// class specific to Circles
+
 class Circle extends Shape {
   constructor(radius) {
-    super(2 * radius, 2 * radius);
+    super(2 * this.radius, 2 * this.radius);
+    this.radius = Number(radius);
     this.div.attr('id', 'circle');
+    this.div.click(() => this.getArea());    
+
+  }
+  getArea() {
+    let radius = this.width / 2;
+    let area = Math.PI * Math.pow(radius, 2);
+    $('#describe-area').val(area);
   }
 }
+$('#circle-btn').click(function() {
+  let radius = $('#radius-px').val();
+  new Circle(radius);
+})
+// class specific to Triangles
 
 class Triangle extends Shape {
   constructor(height) {
@@ -50,13 +66,15 @@ class Triangle extends Shape {
   }
 }
 
+
+// class specific to Rectangles
+
 class Rectangle extends Shape {
   constructor(width, height) {
     super(width, height)
     this.height = Number(height);
     this.width = Number(width);
     this.div.attr('id', 'rectangle');
-    this.div.css('backgroundColor', 'green');
     this.div.click(() => this.getArea());
     this.div.click(() => this.getPerimeter());
     this.div.click(() => $('#describe-shape').val('Rectangle'));
@@ -71,12 +89,13 @@ $('#rectangle-btn').click(function () {
 
 });
 
+// class specific to Squares
+
 class Square extends Shape {
   constructor(sideLength) {
     super(sideLength, sideLength);
     this.sideLength = Number(sideLength);
     this.div.attr('id', 'square');
-    this.div.css('backgrounColor', 'red');
     this.div.click(() => this.getArea());
     this.div.click(() => this.getPerimeter());
     this.div.click(() => $('#describe-shape').val('Square'));
