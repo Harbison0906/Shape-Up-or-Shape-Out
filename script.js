@@ -41,16 +41,24 @@ class Shape {
 
 class Circle extends Shape {
   constructor(radius) {
-    super(2 * this.radius, 2 * this.radius);
+    super(2 * radius, 2 * radius);
     this.radius = Number(radius);
     this.div.attr('id', 'circle');
-    this.div.click(() => this.getArea());    
+    this.div.click(() => this.getArea());  
+    this.div.click(() => this.getPerimeter());  
+    this.div.click(() => $('#describe-shape').val('Circle'));
+    this.div.click(() => $('#describe-radius').val(this.radius));
+
 
   }
   getArea() {
     let radius = this.width / 2;
     let area = Math.PI * Math.pow(radius, 2);
     $('#describe-area').val(area);
+  }
+  getPerimeter() {
+    let perimeter = 2 * Math.PI * this.radius;
+    $('#describe-perimeter').val(perimeter);
   }
 }
 $('#circle-btn').click(function() {
@@ -61,11 +69,23 @@ $('#circle-btn').click(function() {
 
 class Triangle extends Shape {
   constructor(height) {
-    super();
+    super(height, height);
+    this.height = Number(height);
     this.div.attr('id', 'triangle');
+    this.div.click(() => this.getArea());
+    this.div.click(() => $('#describe-shape').val('Triangle'));
+
+  }
+  getArea() {
+    let area = 0.5 * this.height * this.height;
+    $('#describe-area').val(area);
   }
 }
 
+$('#triangle-btn').click(function() {
+  let triHeight = $('#triangle-height').val();
+  new Triangle(triHeight);
+})
 
 // class specific to Rectangles
 
