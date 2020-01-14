@@ -8,8 +8,8 @@ class Shape {
     this.div = $('<div class="shape"></div>');
     this.randomPos();
     this.div.dblclick(() => this.div.remove());
+    this.div.dblclick(() => $('.description').val(''));
     this.div.click(() => this.describe());
-
   }
   randomVal(min, max) {
     return Math.floor(Math.random() * (max - min));
@@ -38,18 +38,15 @@ class Shape {
 }
 
 // class specific to Circles
-
 class Circle extends Shape {
   constructor(radius) {
     super(2 * radius, 2 * radius);
     this.radius = Number(radius);
     this.div.attr('id', 'circle');
-    this.div.click(() => this.getArea());  
-    this.div.click(() => this.getPerimeter());  
+    this.div.click(() => this.getArea());
+    this.div.click(() => this.getPerimeter());
     this.div.click(() => $('#describe-shape').val('Circle'));
     this.div.click(() => $('#describe-radius').val(this.radius));
-
-
   }
   getArea() {
     let radius = this.width / 2;
@@ -61,34 +58,51 @@ class Circle extends Shape {
     $('#describe-perimeter').val(perimeter);
   }
 }
-$('#circle-btn').click(function() {
+
+// click button to add circle
+$('#circle-btn').click(function () {
   let radius = $('#radius-px').val();
   new Circle(radius);
+  $('#radius-px').val('');
 })
-// class specific to Triangles
 
+// class specific to Triangles
 class Triangle extends Shape {
   constructor(height) {
     super(height, height);
     this.height = Number(height);
     this.div.attr('id', 'triangle');
+    this.triStyles();
     this.div.click(() => this.getArea());
+    this.div.click(() => this.getPerimeter());
     this.div.click(() => $('#describe-shape').val('Triangle'));
-
   }
   getArea() {
     let area = 0.5 * this.height * this.height;
     $('#describe-area').val(area);
   }
+  getPerimeter() {
+    let perimeter = 2 * this.height + Math.SQRT2 * this.height;
+    $('#describe-perimeter').val(perimeter);
+  }
+  triStyles() {
+    this.div.css({
+      height: '0',
+      width: '0',
+      borderBottom: `${this.height}px solid yellow`,
+      borderRight: `${this.height}px solid transparent`,
+    })
+  }
 }
 
-$('#triangle-btn').click(function() {
+// click button to add triangle
+$('#triangle-btn').click(function () {
   let triHeight = $('#triangle-height').val();
   new Triangle(triHeight);
+  $('#triangle-height').val('');
 })
 
 // class specific to Rectangles
-
 class Rectangle extends Shape {
   constructor(width, height) {
     super(width, height)
@@ -98,19 +112,20 @@ class Rectangle extends Shape {
     this.div.click(() => this.getArea());
     this.div.click(() => this.getPerimeter());
     this.div.click(() => $('#describe-shape').val('Rectangle'));
-    
   }
 }
 
+// click button to create rectangle
 $('#rectangle-btn').click(function () {
   let rectWidth = $('#width-px').val();
   let rectHeight = $('#rect-height-px').val();
   new Rectangle(rectWidth, rectHeight);
+  $('#width-px').val('');
+  $('#rect-height-px').val('');
 
 });
 
 // class specific to Squares
-
 class Square extends Shape {
   constructor(sideLength) {
     super(sideLength, sideLength);
@@ -129,7 +144,10 @@ class Square extends Shape {
     $('#describe-perimeter').val(perimeter);
   }
 }
+
+// click button to add square
 $('#square-btn').click(function () {
   let sidePx = $('#side-px').val();
   new Square(sidePx, sidePx);
+  $('#side-px').val('');
 })
